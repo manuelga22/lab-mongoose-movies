@@ -1,2 +1,14 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class = "home">
+  {{#each celebrities}}
+  <h3>{{this.name}}</h3>
+  <a href="/celebrities/{{this._id}}">See More</a>
+  <form action="/celebrities/delete/{{this._id}}" method="POST">
+  <button>delete</button>
+  </form>
+  <button><a href="/celebrities/edit/{{this._id}}">edit</a></button>
+  {{/each}}
+  <p>-------------------------------</p>
+  <a href="/celebrities/new">((+))</a>
+  <br>
+  <a href = "/showAndAdd" > Display+Add Celebrities</a>
+</div>
